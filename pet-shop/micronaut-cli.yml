@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.pet
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, assertj, http-client-test, java, java-application, jdbc-hikari, junit, logback, lombok, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, mockito, netty-server, openapi, postgres, readme, serialization-jackson, shade, static-resources, swagger-ui, test-resources, yaml, yaml-build]
