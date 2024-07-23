@@ -1,15 +1,21 @@
 package com.pet.model.service;
 
+import com.pet.exceptions.RequiredObjectIsNullException;
 import com.pet.exceptions.ResourceNotFoundException;
 import com.pet.model.entity.DogEntity;
 import com.pet.model.repository.DogRepository;
-import io.micronaut.context.annotation.Prototype;
+import io.micronaut.context.annotation.Context;
+import io.micronaut.http.annotation.Body;
 import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
 
 import java.util.List;
 import java.util.logging.Logger;
 
-@Prototype
+@Singleton
+@AllArgsConstructor
 public class DogService {
 
     private final Logger logger = Logger.getLogger(DogService.class.getName());
@@ -30,7 +36,7 @@ public class DogService {
     }
 
     public DogEntity create(DogEntity dog) {
-        logger.info("Create Dog: " + dog);
+        logger.info("Create Dog: " + dog.getDogName());
         return repository.save(dog);
     }
 
@@ -53,6 +59,5 @@ public class DogService {
         repository.delete(entity);
 
     }
-
 
 }

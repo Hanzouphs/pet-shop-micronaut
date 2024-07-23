@@ -26,7 +26,7 @@ public class CustomizedExceptionHandler implements ExceptionHandler<Exception, H
         return HttpResponse.serverError(exceptionResponse);
     }
 
-    @Error(status = HttpStatus.NOT_FOUND, global = true)
+    @Error(status = HttpStatus.NOT_FOUND, global = false)
     @Produces
     public HttpResponse<ExceptionResponse> handleNotFoundException(HttpRequest request, ResourceNotFoundException ex) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(

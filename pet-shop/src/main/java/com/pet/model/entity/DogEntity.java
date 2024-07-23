@@ -1,18 +1,17 @@
 package com.pet.model.entity;
 
-import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-@Data
-@Builder
-@Introspected
+
+@Entity
+@Getter
+@Setter
 @Serdeable.Deserializable
+@Table(name="dogs")
 public class DogEntity implements Serializable {
 
     @Serial
